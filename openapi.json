@@ -1,0 +1,31 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ProjectX Mechanics API",
+    "version": "1.2",
+    "description": "Mechanics microservice for Project X (codex, simulate, AoE, round resolver)."
+  },
+  "servers": [{ "url": "<BASE_URL>" }],
+  "paths": {
+    "/": {
+      "get": { "summary": "Health", "responses": { "200": { "description": "OK" } } }
+    },
+    "/codex": {
+      "get": { "summary": "Get Codex", "responses": { "200": { "description": "Codex JSON" } } }
+    },
+    "/simulate": {
+      "post": {
+        "summary": "Simulate attack",
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Simulation result" } }
+      }
+    },
+    "/round_resolver": {
+      "post": {
+        "summary": "Resolve round",
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Round timeline & summary" } }
+      }
+    }
+  }
+}
