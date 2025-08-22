@@ -1,0 +1,20 @@
+{
+  "name": "projectx-mechanics",
+  "description": "Project X mechanics microservice (codex, simulate, AoE, round resolver, archetypes).",
+  "version": "1.2",
+  "base_url": "<BASE_URL>",
+  "auth": {
+    "type": "bearer",
+    "header_name": "Authorization",
+    "note": "Provide Bearer <ACTION_TOKEN> if ACTION_TOKEN set on server"
+  },
+  "endpoints": [
+    { "name": "Health", "method": "GET", "path": "/", "description": "Health check / server info." },
+    { "name": "GetCodex", "method": "GET", "path": "/codex", "description": "Return full mechanics codex." },
+    { "name": "GetArchetypes", "method": "GET", "path": "/archetypes", "description": "Return archetypes list." },
+    { "name": "CalculateDeterministic", "method": "POST", "path": "/calculate", "description": "Deterministic hitChance & damage (no RNG). Body: {attacker, defender, ability, universe}." },
+    { "name": "SimulateAttack", "method": "POST", "path": "/simulate", "description": "Simulate single attack. Body: {attacker, defender, ability, universe, rng (optional)}." },
+    { "name": "SimulateAoE", "method": "POST", "path": "/simulate_aoe", "description": "Simulate AoE. Body: {attacker, defenders[], ability, universe, rng (optional), aoeMode}." },
+    { "name": "RoundResolver", "method": "POST", "path": "/round_resolver", "description": "Resolve a full round. Body: {allies[], enemies[], actions[], universe, rng}." }
+  ]
+}
