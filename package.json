@@ -1,0 +1,26 @@
+{
+  "name": "projectx-mechanics",
+  "version": "1.2.0",
+  "description": "Project X mechanics microservice (codex, simulate, AoE, round resolver, status effects).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "lint": "eslint . || true"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "express-rate-limit": "^6.8.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "eslint": "^8.45.0"
+  }
+}
